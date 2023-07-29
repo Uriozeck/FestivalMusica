@@ -1,0 +1,9 @@
+// @use '../base/variables' 
+/*@use 'base/variables'; si se compila de esta forma marcará error*/
+// @use 'base/variables' as v; //Se pueden usar namespaces para no nombrar todo el nombre del acrchivo
+// h1 {
+//     //color: variables.$rojo;
+//     //color: v.$rojo;
+//     color: v.$rojo;
+//     text-transform: uppercase;
+// }

@@ -1,0 +1,14 @@
+/*Sintaxis anterior para importar otros archivos de sass
+@import 'base/variables'; Omite el guion bajo y la extensión del archivo creado
+@import 'contenido/contenido'; Siempre hay que importar los archivos porque si se crean y se agregan estilos pero no se importan no se van a agregar dichos estilos y solo se importan en el archivo principal
+*/
+
+/*Sintaxis nueva
+Primero por cada carpeta que tenga un archivo de estilos se crea otro archivo llamado _index.scss
+Por ejemplo en la carpeta base existe el _index.scss y _variables.scss dentro del archivo index se llamará a _variables.scss usando @forward 'variables'; Como se ve no se usa mas que el nombre del archivo, sin el guion bajo ni la extensión y así por cada archivo dentro de la misma carpeta y así por carpeta con archivos de sass*/
+
+@use 'base'; /*De esta forma solo se importa la carpeta, esta busca el archivo _index.scss y a su vez importa todos los archivos dentro de esta carpeta*/
+/*@import 'contenido/contenido'; Con la nueva sintaxis si se manda a llamar mezclado por si decirlo va a marcar un error, para solucionarlo y se siga usando @import hay que ir al archivo al que se hace referencia p, Ej. en este caso ir a _contenido.scss, después usar @use y la ruta '../base/variables' o 'base/variables quedando así @use 'base/variables' 
+Si se compila el código aún así mandará error por lo cual se le tendrá que indicar al selector que se agrega el nombre del paquete "variables." y el nombre de la variable*/
+//@use 'contenido';
+@use 'layout';

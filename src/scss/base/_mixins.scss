@@ -1,0 +1,35 @@
+ @use '../base/variables' as v;
+
+// @mixin heading($color: blue) { //se le asigna un parametro por defecto en caso que un selectro no tenga un valor 
+//     text-transform: uppercase;
+//     font-size: 2.4rem;
+//     color:  $color;
+//     letter-spacing: 1px;
+// }
+
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content; //Es una directiva que se usa para poder soportar un bloque de código o más, si este no se agrega no se pueden agregar propiedades en cualquier lugar que requiera este mixin
+    }
+}
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content; //Es una directiva que se usa para poder soportar un bloque de código o más, si este no se agrega no se pueden agregar propiedades en cualquier lugar que requiera este mixin
+    }
+}
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content; //Es una directiva que se usa para poder soportar un bloque de código o más, si este no se agrega no se pueden agregar propiedades en cualquier lugar que requiera este mixin
+    }
+}
+@mixin desktopXL {
+    @media (min-width: v.$desktopXL) {
+        @content; //Es una directiva que se usa para poder soportar un bloque de código o más, si este no se agrega no se pueden agregar propiedades en cualquier lugar que requiera este mixin
+    }
+}
+
+@mixin grid($columnas, $espaciado) {//Se le pasan los argumentos que hacen el mixin más dinámico, 
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr); //Se crea la variable columnas
+    gap: $espaciado; //Se crea la variable espaciado
+}
